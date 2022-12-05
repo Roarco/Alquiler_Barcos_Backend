@@ -1,0 +1,28 @@
+{
+  "name": "alquiler_barcos_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start:dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Roarco/Alquiler_Barcos_Backend.git"
+  },
+  "keywords": [],
+  "author": "Roberth Arrieta <sebuscaroberth@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Roarco/Alquiler_Barcos_Backend/issues"
+  },
+  "homepage": "https://github.com/Roarco/Alquiler_Barcos_Backend#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
