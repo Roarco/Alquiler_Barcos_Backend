@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const BoatServices = require("../services/Boats");
+const ClientServices = require("../services/Clients");
 
-const service = new BoatServices();
+const service = new ClientServices();
 
 //GET
 router.get("/", async(req, res, next) => {
     try {
-        const boats = await service.getBoats();
-        console.log(boats);
+        const clients = await service.getClients();
+        console.log(clients);
     }catch(err) {
         next(err);
     }
@@ -16,26 +16,26 @@ router.get("/", async(req, res, next) => {
 
 //GET by ID
 router.get("/:id", (req, res) => {
-    res.send("El barco es: " + req.params.id);
+    res.send("El cliente es: " + req.params.id);
 });
 
 //POST
 router.post("/", (req, res) => {
     const { body } = req;
-    res.send("Barco creado: " + body.name);
+    res.send("Cliente creado: " + body.name);
 });
 
 
 //PUT
 router.put("/:id", (req, res) => {
     const { body } = req;
-    res.send("Barco actualizado: " + body.name);
+    res.send("Cliente actualizado: " + body.name);
 });
 
 
 //DELETE
 router.delete("/:id", (req, res) => {
-    res.send("El barco con id: " + req.params.id + " ha sido eliminado")
+    res.send("El cliente con id: " + req.params.id + " ha sido eliminado")
 });
 
 module.exports = router;
