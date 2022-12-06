@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Boats = require("../models/Boats");
 
-class CategoryServices {
+class BoatServices {
 
     // Get all boats
     async getBoats() {
