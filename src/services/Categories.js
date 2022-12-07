@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require("../lib/mongo");
 const Categories = require("../models/Categories");
 
 class CategoryServices {

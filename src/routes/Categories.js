@@ -8,7 +8,7 @@ const service = new CategoryServices();
 router.get("/", async(req, res, next) => {
     try {
         const categories = await service.getCategories();
-        console.log(categories);
+        res.json(categories);
     }catch(err) {
         next(err);
     }
