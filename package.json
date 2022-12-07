@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Roarco/Alquiler_Barcos_Backend#readme",
   "dependencies": {
+    "@hapi/boom": "^10.0.0",
     "chalk": "^4.1.2",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
