@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const ScoreServices = require("../services/Score");
+const ScoreServices = require("../services/Scores");
 
 const service = new ScoreServices();
 
@@ -53,3 +53,5 @@ router.delete("/:id", async (req, res, next) => {
         next(err);
     }
 });
+
+module.exports = router;
