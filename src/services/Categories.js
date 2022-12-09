@@ -22,6 +22,14 @@ class CategoryServices {
 
     // create category
     async createCategory(category) {
+        const existCategory = await Categories.findOne({
+            name: category.name,
+        });
+
+        if (existCategory) {
+            throw boom.conflict("Category already exist");
+        }
+
         const newCategory = new Categories(category);
         return await newCategory.save();
     }
