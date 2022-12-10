@@ -28,7 +28,7 @@ const getClientSchema = joi.object({
 });
 
 module.exports = {
-    createCategorySchema,
-    updateCategorySchema,
-    getCategorySchema,
+    createClientSchema,
+    updateClientSchema,
+    getClientSchema,
 }
