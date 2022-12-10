@@ -3,14 +3,13 @@ const router = express.Router();
 const ClientServices = require("../services/Clients");
 const validatorHandler = require("../middlewares/validator");
 const { createClientSchema, updateClientSchema, getClientSchema } = require("../schemas/Clients");
-
 const service = new ClientServices();
 
 //GET
 router.get("/", async(req, res, next) => {
     try {
         const clients = await service.getClients();
-        console.log(clients);
+        res.json(clients);
     }catch(err) {
         next(err);
     }

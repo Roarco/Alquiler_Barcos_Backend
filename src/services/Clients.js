@@ -1,8 +1,10 @@
-const mongoose = require("mongoose");
+const mongoose = require("../lib/mongo");
+const boom = require("@hapi/boom");
 const Clients = require("../models/Clients");
 
 class ClientServices {
-
+    constructor() { }
+    
     // Get all clients
     async getClients() {
         return await Clients.find();
