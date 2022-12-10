@@ -1,28 +1,28 @@
 const mongoose = require("../lib/mongo");
 const boom = require("@hapi/boom");
-const Categories = require("../models/Categories");
+const Messages = require("../models/Messages");
 
-class CategoryServices {
-    constructor() { }
-
-    // Get all categories
-    async getCategories() {
-        return await Categories.find();
+class MessageServices {
+    constructor() {
     }
 
-    // Get category by id
-    async getCategory(id) {
-        const category = await Categories.findById(id);
+    // Get all mesagges
+    async getMesagges() {
+        return await Messages.find();
+    }
+     // Get category by id
+     async getCategory(id) {
+        const message = await Message.findById(id);
 
-        if (!category) {
-            throw boom.notFound("Category not found");
+        if (!message) {
+            throw boom.notFound("message not found");
         }
-        return category;
+        return message;
     }
 
     // create category
-    async createCategory(category) {
-        const existCategory = await Categories.findOne({
+    async createMessage(message) {
+        const existMessage = await Messages.findOne({
             name: category.name,
         });
 
@@ -61,4 +61,4 @@ class CategoryServices {
     }
 }
 
-module.exports = CategoryServices;
+module.exports = MessageServices;

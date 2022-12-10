@@ -1,18 +1,21 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const CategorySchema = new Schema({
+const AdminSchema = new Schema({
   name: {
+    type: String,
+    required: true,
+  },
+  email: {
     type: String,
     required: true,
     unique: true,
   },
-  description: {
+  password: {
     type: String,
     required: true,
   },
 });
 
-const Category = mongoose.model('Categories', CategorySchema);
-
-module.exports = Category;
+const Admin = mongoose.model('Admins', AdminSchema);
+module.exports = Admin;
