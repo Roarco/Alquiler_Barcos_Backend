@@ -46,8 +46,7 @@ router.post("/",
 
 
 //PUT
-router.put(
-    "/:id",
+router.put("/:id",
     validatorHandler(getClientSchema, "params"),
     validatorHandler(updateClientSchema, "body"),
     async (req, res, next) => {
