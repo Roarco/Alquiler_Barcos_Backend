@@ -6,7 +6,7 @@ const email = joi.string().email();
 const age = joi.string().max(3);
 const password = joi.string().min(8).max(15);
 
-// creamos el schema de categoria para la creacion
+// creamos el schema de client para la creacion
 const createClientSchema = joi.object({
     name: name.required(),
     email: email.required(),
@@ -14,7 +14,7 @@ const createClientSchema = joi.object({
     password: password.required()
 });
 
-// creamos el schema de categoria para la actualizacion
+// creamos el schema de client para la actualizacion
 const updateClientSchema = joi.object({
     name: name,
     email: email,

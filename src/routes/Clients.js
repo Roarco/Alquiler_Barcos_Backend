@@ -42,7 +42,8 @@ router.post("/",
         } catch (err) {
             next(err);
         }
-    });
+    }
+);
 
 
 //PUT
