@@ -18,13 +18,12 @@ router.get("/", async(req, res, next) => {
 });
 
 //GET by ID
-router.get("/:id", (req, res) => 
-"/:id",
+router.get("/:id",
     validatorHandler(getMessageSchema, "params"),
     async (req, res, next) => {
         try {
             const { id } = req.params;
-            const message = await service.getMessage(id);
+            const message = await service.getMessagesById(id);
             res.json(message);
         } catch (err) {
             next(err);

@@ -3,14 +3,13 @@ const router = express.Router();
 const ReservationServices = require("../services/Reservations");
 const validatorHandler = require("../middlewares/validator");
 const { createReservationSchema, updateReservationSchema, getReservationSchema } = require("../schemas/Reservations");
-
 const service = new ReservationServices();
 
 //GET
 router.get("/", async(req, res, next) => {
     try {
-        const reservartion = await service.getReservations();
-        console.log(reservartion);
+        const reservartions = await service.getReservations();
+        res.json(reservartions);
     }catch(err) {
         next(err);
     }
@@ -19,11 +18,11 @@ router.get("/", async(req, res, next) => {
 //GET by ID
 router.get(
     "/:id",
-    validatorHandler(getReservationSchema, "params"),
+    validatorHandler(getReservationSchema , "params"),
     async (req, res, next) => {
         try {
             const { id } = req.params;
-            const reservation = await service.getReservation(id);
+            const reservation = await service.getReservationsById(id);
             res.json(reservation);
         } catch (err) {
             next(err);

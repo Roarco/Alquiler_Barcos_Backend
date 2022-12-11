@@ -2,23 +2,21 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ReservationSchema = new Schema({
-  value: {
-    type: Number
-  
-    
+
+  clients: {
+    type: String
   },
-  client: {
-    type: Number
-  
-    
+
+  boats: {
+    type: String
   },
-  intake: {
-    type: Number
   
-    
+  stardate: {
+    type: String
   },
-  deadline: {
-    type: Number
+  
+  endline: {
+    type: String
     
   },
 });
