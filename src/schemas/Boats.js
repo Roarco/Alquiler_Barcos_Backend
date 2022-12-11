@@ -13,8 +13,7 @@ const createBoatSchema = joi.object({
     name: name.required(),
     year: year.required(),
     description: description.required(),
-    category : category 
-});
+    category : category.required() });
 
 // creamos el schema de boat para la actualizacion
 const updateBoatSchema = joi.object({
