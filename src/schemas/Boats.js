@@ -5,7 +5,7 @@ const brand = joi.string().max(250);
 const name = joi.string().max(250);
 const year = joi.string().max(250);
 const description = joi.string().max(250);
-const category = joi.array();
+const category = joi.object();
 
 // creamos el schema de boat para la creacion
 const createBoatSchema = joi.object({
@@ -13,7 +13,7 @@ const createBoatSchema = joi.object({
     name: name.required(),
     year: year.required(),
     description: description.required(),
-    category : category.required()
+    category : category
 });
 
 // creamos el schema de boat para la actualizacion

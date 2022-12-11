@@ -15,6 +15,7 @@ const BoatSchema = new Schema({
     type: String
   },
   category: {
+    type: Object
   }
 });
 
