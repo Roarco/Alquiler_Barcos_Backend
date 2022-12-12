@@ -9,7 +9,10 @@ const ScoreSchema = new Schema({
     },
     message: {
         type: String,
-    }
+    },
+    reservartion: {
+        type: Object
+      }
 });
 
 const Score = mongoose.model('Scores', ScoreSchema);
