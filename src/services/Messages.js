@@ -26,6 +26,7 @@ class MessagesServices {
         /* const existMessage = await Messages.findOne({
             boats: message.boats,
         });
+
         if (existCategory) {
             throw boom.conflict("message already exist");
         } */
