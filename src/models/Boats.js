@@ -5,7 +5,7 @@ const BoatSchema = new Schema({
   brand: {
     type: String
   },
-  nombre: {
+  name: {
     type: String
   },
   year: {
@@ -15,6 +15,7 @@ const BoatSchema = new Schema({
     type: String
   },
   category: {
+    type: Object
   }
 });
 
