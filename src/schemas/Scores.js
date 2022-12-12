@@ -1,7 +1,7 @@
 const joi = require('joi');
 
 const id = joi.string();
-const score = joi.integer();
+const score = joi.number();
 const message = joi.string();
 const reservartion = joi.object();
 
