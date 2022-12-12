@@ -2,17 +2,18 @@ const mongoose = require("../lib/mongo");
 const boom = require("@hapi/boom");
 const Messages = require("../models/Messages");
 
-class MessageServices {
+class MessagesServices {
     constructor() {
     }
 
     // Get all mesagges
-    async getMesagges() {
+    async getMessages() {
         return await Messages.find();
     }
-     // Get category by id
-     async getCategory(id) {
-        const message = await Message.findById(id);
+     // Get message by id
+     
+    async getMessagesById(id) {
+        const message = await Messages.findById(id);
 
         if (!message) {
             throw boom.notFound("message not found");
@@ -20,45 +21,44 @@ class MessageServices {
         return message;
     }
 
-    // create category
+    // create message
     async createMessage(message) {
-        const existMessage = await Messages.findOne({
-            name: category.name,
+        /* const existMessage = await Messages.findOne({
+            boats: message.boats,
         });
-
         if (existCategory) {
-            throw boom.conflict("Category already exist");
-        }
+            throw boom.conflict("message already exist");
+        } */
 
-        const newCategory = new Categories(category);
-        return await newCategory.save();
+        const newMessage = new Messages (message);
+        return await newMessage.save();
     }
 
-    // update category
-    async updateCategory(id, category) {
-        const findCategory = await this.getCategory(id);
+    // update message
+    async updateMessage(id, message) {
+        const findMessage = await Messages.findById(id);
 
-        if (!findCategory) {
-            throw boom.notFound("Category not found");
+        if (!findMessage) {
+            throw boom.notFound("message not found");
         }
 
-        const updatedCategory = await Categories.findByIdAndUpdate(id, category, {
+        const updatedMessage = await Messages.findByIdAndUpdate(id, message, {
             new: true,
         });
-        return updatedCategory;
+        return updatedMessage;
     }
 
-    // delete category
-    async deleteCategory(id) {
-        const category = await this.getCategory(id);
+    // delete message
+    async deleteMessage(id) {
+        const message = await this.getMessagesById(id);
 
-        if (!category) {
-            throw boom.notFound("Category not found");
+        if (!message) {
+            throw boom.notFound("message not found");
         }
 
-        await Categories.findByIdAndRemove(id);
-        return { message: "Category deleted" };
+        await Messages.findByIdAndRemove(id);
+        return { message: "message deleted" };
     }
 }
 
-module.exports = MessageServices;
+module.exports = MessagesServices;
